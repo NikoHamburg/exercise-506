@@ -41,11 +41,13 @@ const SupplierCard = (props) => {
       await fetch(`${apiUrl}supplier/${supplier._id}`, {
         method: "DELETE",
       });
-      const suppliersKeep = suppliers.filter((sup) => sup._id !== supplier._id);
-      setSuppliers(suppliersKeep);
     } catch (err) {
       console.log(`error`);
     }
+    const suppliersNew = [
+      ...suppliers.filter((sup) => sup._id !== supplier._id),
+    ];
+    setSuppliers([...suppliersNew]);
   };
 
   const updateSupplier = async (e) => {
@@ -73,6 +75,7 @@ const SupplierCard = (props) => {
 
   const copySupplier = async () => {
     Object.assign(supplierNew, supplier);
+    supplierNew._id = suppliers.sort((a, b) => b._id - a._id)[0]._id + 1;
     try {
       await fetch(`http://localhost:3040/supplier/`, {
         headers: {
@@ -84,8 +87,8 @@ const SupplierCard = (props) => {
     } catch (err) {
       console.log(err);
     }
-    setSupplierNew({ ...supplierDefault });
     setSuppliers([...suppliers, { ...supplierNew, ...supplierNew.address }]);
+    setSupplierNew({ ...supplierDefault });
   };
 
   return (
