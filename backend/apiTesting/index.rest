@@ -1,0 +1,53 @@
+@url = http://localhost:3040
+
+### test base
+GET {{url}}
+
+### test 404
+GET {{url}}/nonsense
+
+### get all supplier
+GET {{url}}/supplier
+
+### get supplier by id
+GET {{url}}/supplier/30
+
+### add a supplier
+POST {{url}}/supplier
+Content-Type: application/json
+
+{
+    "companyName": "Super Supplier",
+    "contactName": "Heino Hansemann",
+    "contactTitle": "Super Representative",
+    "address": {
+        "street": "3982 fidji street",
+        "city": "bonn",
+        "region": "bayern",
+        "postalCode": "49493",
+        "country": "Mexico",
+        "phone": "0170-12345678"
+    }
+}
+
+### delete supplier by id
+DELETE {{url}}/supplier/30
+
+### update supplier by id
+PUT {{url}}/supplier/30
+Content-Type: application/json
+
+{
+    "_id": 30,
+    "companyName": "Super Duper Supplier3",
+    "contactName": "Heino Hansemann",
+    "contactTitle": "Super Representative",
+    "address": {
+        "street": "3982 fidji street",
+        "city": "bonn",
+        "region": "bayern",
+        "postalCode": "49493",
+        "country": "Mexico",
+        "phone": "0170-12345678"
+    }
+}

@@ -1,0 +1,61 @@
+.supplier {
+    width: 500px;
+}
+
+.supplierCard {
+    background-color: rgb(240, 203, 148);
+    border-radius: 8px;
+    border: 1px solid rgb(42, 161, 112);
+    box-shadow: 3px 2px 2px rgb(9, 84, 114);
+    padding: 0 12px 0 12px;
+    margin: 8px;
+    color: rgb(3, 61, 61);
+} 
+
+.supplierCard h2 {
+    color:rgb(9, 84, 114);
+}
+
+.cardIcons {
+    text-align: right;
+}
+
+.supplierCard .contact {
+    color: rgb(153, 18, 124);
+    font-weight: bold;
+}
+
+.infoButton {
+    background-color: lightblue;
+    padding: 3px 0 0 0;
+    border: 1px solid rgb(64, 64, 122);
+    color:rgb(49, 118, 196);
+}
+
+.addSupplier {
+    background-color: cadetblue;
+    border: 1px ridge black;
+    padding: 8px;
+    margin-bottom: 14px;
+}
+
+.addSupplier label{
+    padding: 10px
+}
+
+.addressFields {
+    padding: 10px;
+}
+
+.editButtons {
+    padding-left: 160px;
+}
+
+.editButtons button {
+	background: none;
+	color: inherit;
+	border: none;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+}
